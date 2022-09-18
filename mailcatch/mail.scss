@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+.containerCatcher{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 80%;
+   height: 80vh;
+   h1{
+    width: 80%;
+    margin-bottom: .5em;
+    font-size: 3em;
+  
+   
+   }
+   .formCont{
+   width: 90%;
+   } 
+      .div-input{
+        display: flex;
+        width: 80%;
+        justify-content: center;
+        gap: 4em;
+        .leftInput{
+            width: 80%;
+            label{
+        
+                background-color: darkcyan;
+                width: 100%;
+                p{
+                    margin-top: 1em;
+                }
+            input{
+                margin: 1em 0;
+                padding: 1em 1em;
+                width: 100%;
+                width: 100%;
+                border: 1px solid transparent;
+                background-color: rgb(243, 250, 252);
+            }
+            }
+        }
+
+        .rightInput{
+            width: 80%;
+            label{
+                background-color: darkcyan;
+                width: 100%;
+                p{
+                    margin-top: 1em;
+
+                }
+            input{
+                margin: 1em 0;
+                width: 100%;
+                padding: 1em 1em;
+
+                width: 100%;
+                border: 1px solid transparent;
+                background-color: rgb(243, 250, 252);
+            }
+            }
+        }
+    }
+    .textarea_div{
+      width: 80%;
+      p{
+        margin-bottom: 1em;
+      }
+       textarea{
+        width: 100%;
+        padding: 1em 1em;
+
+        border: 1px solid transparent;
+        background-color: rgb(243, 250, 252);
+       }
+    }
+    .btn{
+        width: 80%;
+        button{
+            align-self: flex-start;
+            width:40% ;
+            padding: 1em 0;
+            margin-top: 2em;
+            border: 1px solid transparent;
+            background-color: rgb(30, 32, 32);
+            color: white;
+        }
+    }
+
+}
