@@ -414,9 +414,18 @@ p {
 
         .portfolio-project {
             margin-top: 4em;
-            display: flex;
-            gap: 3em;
+            position: relative;
             width: 100%;
+            padding: 15em 0;
+
+            .container-gallery{
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                gap: 3em;
+        
+            }
 
 
             img {

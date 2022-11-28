@@ -1037,6 +1037,7 @@
   }
   .Portfolio__container .portfolio-project {
     margin-top: 2em !important;
+    padding: 11em 0 !important;
   }
   .Portfolio__container .portfolio-project img {
     height: 280px;

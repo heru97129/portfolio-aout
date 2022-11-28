@@ -353,9 +353,17 @@ p {
 
 .Portfolio__container .portfolio-project {
   margin-top: 4em;
+  position: relative;
+  width: 100%;
+  padding: 15em 0;
+}
+
+.Portfolio__container .portfolio-project .container-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   gap: 3em;
-  width: 100%;
 }
 
 .Portfolio__container .portfolio-project img {

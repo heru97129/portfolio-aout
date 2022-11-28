@@ -28,7 +28,7 @@ itemsservices.forEach((btnservice, i) => {
     // CLICK ON EACH SERVICES
     btnservice.addEventListener('click', (elo) => {
         itemsservices.forEach(btnservice2 => btnservice2.style = ` transition:.3s ease-out;box-shadow:none`)
-       
+
         btnservice.style = `
         transform:translateX(50px);
         transition:.3s ease-out;
@@ -58,101 +58,101 @@ itemsservices.forEach((btnservice, i) => {
 
 
 anime({
-    targets:itemsservices,
-    opacity:0
+    targets: itemsservices,
+    opacity: 0
 })
 
 anime({
-    targets:'.switch-avis .fa-solid',
-    opacity:0
+    targets: '.switch-avis .fa-solid',
+    opacity: 0
 })
 
 // animation scroll
-let bolanimServ= false
-let bolanimExp= false
-window.addEventListener('scroll',(e)=>{
-    console.log(window.scrollY)
-    let scrollListener =  window.scrollY
+let bolanimServ = false
+let bolanimExp = false
+window.addEventListener('scroll', (e) => {
+
+    let scrollListener = window.scrollY
 
     let services = document.querySelector('.services')
-   let servicestop =  services.getBoundingClientRect().top * 1.2
- 
-   
-   if(window.scrollY > servicestop  ){
+    let servicestop = services.getBoundingClientRect().top * 1.2
 
-    
-    if(!bolanimServ){
-        anime({
-            targets:itemsservices,
-            opacity:[0,1],
-            translateX:[-200,0],
-            delay:anime.stagger(100)
-        })
-        return bolanimServ = true
+
+    if (window.scrollY > servicestop) {
+
+
+        if (!bolanimServ) {
+            anime({
+                targets: itemsservices,
+                opacity: [0, 1],
+                translateX: [-200, 0],
+                delay: anime.stagger(100)
+            })
+            return bolanimServ = true
+        }
     }
-   }
 
 
 
-   let Experience = document.querySelector('.Experience')
-   let Experiencestop =  Experience.getBoundingClientRect().top
+    let Experience = document.querySelector('.Experience')
+    let Experiencestop = Experience.getBoundingClientRect().top
 
-   if(Experiencestop <  100  ){
-       console.log(Experiencestop,'here')
-       
-       if(!bolanimExp){
-           anime({
-               targets:'.card:nth-child(odd)',
-               opacity:[0,1],
-               translateY:[-200,0],
-               delay:anime.stagger(100)
-           })
-           anime({
-               targets:'.card:nth-child(even)',
-               opacity:[0,1],
-               translateY:[-200,-100],
-               delay:anime.stagger(100)
-           })
+    if (Experiencestop < 100) {
+        console.log(Experiencestop, 'here')
 
-           anime({
-            targets:'.switch-avis .fa-caret-right',
-            translateX:[50,0],
-            opacity:[0,1]
-           })
-           anime({
-            targets:'.switch-avis .fa-caret-left',
-            translateX:[-50,0],
-            opacity:[0,1]
-           })
-           return bolanimExp = true
-       }
-      }
+        if (!bolanimExp) {
+            anime({
+                targets: '.card:nth-child(odd)',
+                opacity: [0, 1],
+                translateY: [-200, 0],
+                delay: anime.stagger(100)
+            })
+            anime({
+                targets: '.card:nth-child(even)',
+                opacity: [0, 1],
+                translateY: [-200, -100],
+                delay: anime.stagger(100)
+            })
 
-   
-    
-// menu stick
-let menu_div =  document.querySelector('.menu-div')
-
-let sectionServices = document.querySelector('#Works')
-
-let sectionServicesbottom = sectionServices.getBoundingClientRect().bottom
+            anime({
+                targets: '.switch-avis .fa-caret-right',
+                translateX: [50, 0],
+                opacity: [0, 1]
+            })
+            anime({
+                targets: '.switch-avis .fa-caret-left',
+                translateX: [-50, 0],
+                opacity: [0, 1]
+            })
+            return bolanimExp = true
+        }
+    }
 
 
-   if(window.scrollY > sectionServicesbottom){
-    menu_div.classList.add('pos-Fix')
 
-   }else{
-    menu_div.classList.remove('pos-Fix')
-   }
+    // menu stick
+    let menu_div = document.querySelector('.menu-div')
+
+    let sectionServices = document.querySelector('#Works')
+
+    let sectionServicesbottom = sectionServices.getBoundingClientRect().bottom
 
 
-    
+    if (window.scrollY > sectionServicesbottom) {
+        menu_div.classList.add('pos-Fix')
+
+    } else {
+        menu_div.classList.remove('pos-Fix')
+    }
+
+
+
 })
 
 // put target at opacity 0
 anime({
-    targets:'.card',
-    opacity:0
+    targets: '.card',
+    opacity: 0
 })
 
 
@@ -171,37 +171,43 @@ let menu_links = document.querySelectorAll('.menu-links')
 let menu_linksContact = document.querySelectorAll('.li-contact')
 
 // for every sections
-sections.forEach( (section,isec )=>{
-// loop on links
-    menu_links.forEach( (link,imenu)=>{
+sections.forEach((section, isec) => {
+    // loop on links
+    menu_links.forEach((link, imenu) => {
 
-//   links clicked 
-    link.addEventListener('click',( _=>{
-// when u click on the link the window scroll to the sections 
-        if(isec == imenu+1){
-            section.scrollIntoView({behavior: "smooth", block: "start"})
-         }
-  
+        //   links clicked 
+        link.addEventListener('click', (_ => {
+            // when u click on the link the window scroll to the sections 
+            if (isec == imenu + 1) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                })
+            }
 
-    }))
 
- })
- 
-
- menu_linksContact.forEach( (linCont,imenu)=>{
-
-    //   links clicked 
-    linCont.addEventListener('click',( _=>{
-    // when u click on the link the window scroll to the sections 
-            if(isec == imenu+1){
-                section.scrollIntoView({behavior: "smooth", block: "start"})
-             }
-      
-    
         }))
-    
-     })
-       
+
+    })
+
+
+    menu_linksContact.forEach((linCont, imenu) => {
+
+        //   links clicked 
+        linCont.addEventListener('click', (_ => {
+            // when u click on the link the window scroll to the sections 
+            if (isec == imenu + 1) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                })
+            }
+
+
+        }))
+
+    })
+
 
 })
 
@@ -214,45 +220,45 @@ let roll__Down = document.querySelector('.roll-down-menu')
 let bolBurger = false
 console.log(burger)
 
-burger.addEventListener('click',()=>{
-  bolBurger = !bolBurger
+burger.addEventListener('click', () => {
+    bolBurger = !bolBurger
 
-  if(bolBurger){
-    roll__Down.style =`
+    if (bolBurger) {
+        roll__Down.style = `
   
     width:100%;
     opacity:1
 
     `
-    anime({
-        targets:'.tiret-burger:nth-child(2)',
-        width:20,
-     
-     })
-    anime({
-       targets:'.tiret-burger:nth-child(3)',
-       width:20,
+        anime({
+            targets: '.tiret-burger:nth-child(2)',
+            width: 20,
 
-    
-    })
-  }else{
+        })
+        anime({
+            targets: '.tiret-burger:nth-child(3)',
+            width: 20,
 
-    roll__Down.style =`
+
+        })
+    } else {
+
+        roll__Down.style = `
     transition: .5s ease-in-out;
     width:0%;
 
     `
-    anime({
-        targets:'.tiret-burger:nth-child(odd)',
-        width:8,
-     
-     })
-     anime({
-        targets:'.tiret-burger:nth-child(2)',
-        width:15,
-     
-     })
-  }
+        anime({
+            targets: '.tiret-burger:nth-child(odd)',
+            width: 8,
+
+        })
+        anime({
+            targets: '.tiret-burger:nth-child(2)',
+            width: 15,
+
+        })
+    }
 })
 
 
@@ -262,62 +268,64 @@ burger.addEventListener('click',()=>{
 let moveItems = 0
 // icone arrow
 let leftArrow = document.querySelector('.left-folio')
-let rightArrow = document.querySelector('.right-folio')// gallerie
+let rightArrow = document.querySelector('.right-folio') // gallerie
 let container = document.querySelector('.portfolio-project')
-let portofolioSize = document.querySelector('.Portfolio__container')     
+let boxSize = document.querySelector('.container-gallery')
+let memoryMove = 0
 
-function MoveLeft(e){
-    let containerRidth = portofolioSize.getBoundingClientRect().right
+function MoveLeft() {
+    // left bounding
 
-let portofolioSizeLeft = portofolioSize.getBoundingClientRect().left
-    e.preventDefault();  
-    console.log(containerRidth,'container width left move')
-    console.log(portofolioSizeLeft,'container width left move')
-    console.log(moveItems,'container width left move')
-  if(moveItems < -1300){
-      console.log('end')
-  }else{
-      container.style = `transform : translateX(${moveItems -= 200}px);transition:1s ease`
-  
-  }
-  console.log(-(container.offsetWidth * 5),'hey')
+    let itemImg = boxSize.children[0].clientWidth + 50
 
-  if(moveItems < container.offsetWidth * 5){
-    console.log('ok')
-  }
-  
-  
-  }
-  
-  function MoveRight(e){
+    let boxContainer = boxSize.getBoundingClientRect()
+    let ContainerGallery = container.getBoundingClientRect()
+console.log(ContainerGallery)
 
-    let containerRidth = portofolioSize.getBoundingClientRect().right
-
-    let portofolioSizeRight = portofolioSize.getBoundingClientRect().right
-  console.log(containerRidth,'container width Right move')
-  console.log(portofolioSizeRight,'container width Right move')
-    if(moveItems >= 0){
-      console.log('end')
+// si le container va plus loin que son parent sur la droite revenir a l'endroit précis
+    if (boxContainer.right < ContainerGallery.right) {
+       
+        boxSize.style.right = `-${ContainerGallery.right}px`
+    
     }else{
-      container.style = `transform : translateX(${moveItems += 200}px);transition:1s ease`
-  
-    }
-    console.log(container.offsetWidth,container.getBoundingClientRect().right,moveItems)
-  
-    e.preventDefault();  
-  
-  
-  
-    }
-  
-window.addEventListener('resize',()=>{
+        memoryMove += itemImg
 
-  
+    }
+
+    boxSize.style = `
+            transition: .5s ease;
+            left:-${memoryMove}px;
+            `
+
+    console.log(memoryMove)
+
+}
+
+function MoveRight() {
+    let itemImg = boxSize.children[0].clientWidth + 50
+
+    if(memoryMove <= 5){
+        memoryMove = 0
+    }else{
+        memoryMove -= itemImg
+
+    }
+
+
+
+   boxSize.style = `
+   transition: .5s ease;
+   left:-${memoryMove}px;
+   `
+   console.log(memoryMove)
+
+}
+
+window.addEventListener('resize', () => {
+
+  MoveLeft()
+  MoveRight()
 })
 
-leftArrow.addEventListener('click',MoveLeft)
-rightArrow.addEventListener('click',MoveRight)
-
-
-
-
+leftArrow.addEventListener('click', MoveLeft)
+rightArrow.addEventListener('click', MoveRight)
